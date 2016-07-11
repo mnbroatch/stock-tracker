@@ -1,7 +1,7 @@
 
-<div ng-repeat="stock in stockArray">
+<div ng-repeat="stock in stockArray track by $index">
 
-		<a ui-sref="viewone({symbol:stock.Symbol})">
+		<a ui-sref="viewone({symbol:stock})">
 		{{stock}}
 		</a>
 		<button ng-click="delete(stock)">delete</button>

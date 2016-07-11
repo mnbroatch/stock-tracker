@@ -9,6 +9,7 @@ angular.module('stockTracker')
 	$scope.stockInfoArray = $scope.stockArray.map( (el,ind)=>{
 		stockService.getStock(el)
 		.then(res=>{
+			console.log(res);
 			return res;
 		})
 	})
