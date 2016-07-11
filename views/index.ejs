@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MEAN Stocks</title>
+
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+
+<script src="/js/module.js"></script>
+<script src="/js/loginRegisterController.js"></script>
+
+<script src="/js/mainController.js"></script>
+<script src="/js/searchController.js"></script>
+<script src="/js/trackerController.js"></script>
+<script src="/js/viewoneController.js"></script>
+<script src="/js/loginregisterController.js"></script>
+
+<script src="/js/stockService.js"></script>
+<script src="/js/userService.js"></script>
+
+</head>
+<body ng-app='stockTracker' ng-controller='mainController'>
+<div class="container">
+<h1>MEAN Stocks</h1>
+
+<button class="btn" ui-sref='home'>Home</button>
+<button class="btn" ui-sref='search'>Search</button>    
+<button ng-show='currentUser' class="btn" ui-sref='tracker'>Tracker</button>    
+<button ng-hide='currentUser' class="btn" ui-sref='login'>Login</button>
+<button ng-hide='currentUser' class="btn" ui-sref='register'>Register</button>    
+<button ng-show='currentUser' class="btn" ng-click='logout()'>Logout</button>
+
+<span ng-show='currentUser'>Hello, {{currentUser.username}}!</span>
+
+<div ui-view></div>
+
+</div>
+</body>
+</html>
+

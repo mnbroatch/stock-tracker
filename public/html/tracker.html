@@ -1,0 +1,9 @@
+
+<div ng-repeat="stock in stockArray">
+
+		<a ui-sref="viewone({symbol:stock.Symbol})">
+		{{stock}}
+		</a>
+		<button ng-click="delete(stock)">delete</button>
+
+</div>
