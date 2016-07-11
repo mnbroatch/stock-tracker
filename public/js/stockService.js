@@ -10,7 +10,7 @@ angular.module('stockTracker')
 	this.search = searchTerm => {
 		return $http({
 			method:'JSONP',
-			url: 'http://dev.markitondemand.com/Api/v2/Lookup/jsonp?input=' + searchTerm,
+			url: 'https://dev.markitondemand.com/Api/v2/Lookup/jsonp?input=' + searchTerm,
 			params: {callback:'JSON_CALLBACK'}
 		})
 		.then( res => {
@@ -26,7 +26,7 @@ angular.module('stockTracker')
 	this.getStock = symbol => {
 		return $http({
 			method:'JSONP',
-			url: 'http://dev.markitondemand.com/Api/v2/Quote/jsonp?symbol=' + symbol,
+			url: 'https://dev.markitondemand.com/Api/v2/Quote/jsonp?symbol=' + symbol,
 			params: {callback:'JSON_CALLBACK'}
 		})
 		.then( res => {
